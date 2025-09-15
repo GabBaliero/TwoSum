@@ -1,0 +1,30 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ "main", "workflow-setup" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore TwoSum.sln
+
+      - name: Build
+        run: dotnet build TwoSum.sln --no-restore --configuration Release
+
+      - name: Run tests (opcional)
+        run: dotnet test TwoSum.sln --no-build --verbosity normal
