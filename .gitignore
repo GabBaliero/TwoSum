@@ -1,0 +1,37 @@
+# Build Folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Resharper
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Publish folder
+publish/
+
+# Rider
+*.sln.iml
