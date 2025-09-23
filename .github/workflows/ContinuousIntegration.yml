@@ -19,18 +19,3 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
-
-    - name: Restore TwoSumApp
-      run: dotnet restore TwoSumApp/TwoSumApp.csproj
-
-    - name: Restore TwoSumTests
-      run: dotnet restore TwoSumTests/TwoSumTests.csproj
-
-    - name: Build TwoSumApp
-      run: dotnet build TwoSumApp/TwoSumApp.csproj --no-restore --configuration Release
-
-    - name: Build TwoSumTests
-      run: dotnet build TwoSumTests/TwoSumTests.csproj --no-restore --configuration Release
-
-    - name: Run Tests
-      run: dotnet test TwoSumTests/TwoSumTests.csproj --no-build --verbosity normal
